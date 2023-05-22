@@ -1,58 +1,17 @@
-# Hono minimal project
+# hono-1
 
-This is a minimal project with [Hono](https://github.com/honojs/hono/) for Cloudflare Workers.
+## D1 の DB 作成
 
-## Features
-
-- Minimal
-- TypeScript
-- Wrangler to develop and deploy.
-- [Jest](https://jestjs.io/ja/) for testing.
-
-## Usage
-
-Initialize
-
-```
-npx create-cloudflare my-app https://github.com/honojs/hono-minimal
+```shell
+npx wrangler d1 create hoge-db
 ```
 
-Install
+## Migration
 
+- drizzle で migration ファイルを出力して、D1 のコマンドで反映する。
+- 下記の wrangler コマンドは、node 19 だとエラーでて、18 だと出来た。
+
+```shell
+npx drizzle-kit generate:sqlite --schema=src/models/schema.ts --out=migrations
+wrangler d1 migrations apply hoge-db --local
 ```
-yarn install
-```
-
-Develop
-
-```
-yarn dev
-```
-
-Test
-
-```
-yarn test
-```
-
-Deploy
-
-```
-yarn deploy
-```
-
-## Examples
-
-See: <https://github.com/honojs/examples>
-
-## For more information
-
-See: <https://honojs.dev>
-
-## Author
-
-Yusuke Wada <https://github.com/yusukebe>
-
-## License
-
-MIT

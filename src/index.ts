@@ -1,5 +1,7 @@
 import { Hono } from "hono";
 import { poweredBy } from "hono/powered-by";
+import { drizzle } from "drizzle-orm/d1";
+import { users } from "./models/schema";
 
 const app = new Hono();
 
@@ -16,6 +18,12 @@ app.get("/posts/:id", (c) => {
 
 app.get("/posts", (c) => {
   return c.json({ posts: [{ title: "Hello Hono!" }] });
+});
+
+app.get("/users", async (c) => {
+  const db = drizzle(c.env.DB);
+  const result = await db.select().from(users).all();
+  return c.json(result);
 });
 
 export default app;
