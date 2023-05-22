@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { poweredBy } from "hono/powered-by";
 import { drizzle } from "drizzle-orm/d1";
-import { users } from "./models/schema";
+import { users } from "./models/users";
 
 const app = new Hono();
 

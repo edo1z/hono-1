@@ -8,6 +8,13 @@
       "when": 1684714003301,
       "tag": "0000_wet_true_believers",
       "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1684745689169,
+      "tag": "0001_gifted_exodus",
+      "breakpoints": false
     }
   ]
 }
