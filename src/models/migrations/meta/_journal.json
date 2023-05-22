@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1684714003301,
+      "tag": "0000_wet_true_believers",
+      "breakpoints": false
+    }
+  ]
+}
